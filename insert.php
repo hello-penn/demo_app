@@ -23,8 +23,9 @@ function test_input($data)
    $data = htmlspecialchars($data);
    return $data;
 }
+
 $sql = "INSERT INTO ideas (user_id, name, description, category_id, created_at)
-VALUES (1, $ideaname, $description, 1, NOW())"
+VALUES (1, '$ideaname', '$description', 1, NOW())";
 
 if (!mysqli_query($mysql_link,$sql))
   {
