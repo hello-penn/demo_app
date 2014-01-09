@@ -11,10 +11,9 @@
   <span
     class="g-signin"
     data-callback="signinCallback"
-    data-clientid="56998233293.apps.googleusercontent.com"
+    data-clientid="56998233293-4vfl3q8gs7q0k2t2fnvi3nq4r3t5uofb.apps.googleusercontent.com"
     data-cookiepolicy="single_host_origin"
-    data-requestvisibleactions="g-signin"
-    data-scope="profile">
+    data-scope="https://www.googleapis.com/auth/plus.login">
   </span>
 </span>
 

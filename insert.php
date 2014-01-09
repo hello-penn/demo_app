@@ -10,8 +10,6 @@ $username = $email = $ideaname = $description = NULL;
 
 if ($_SERVER["REQUEST_METHOD"] == "POST")
 {
-   $username = test_input($_POST['username']);
-   $email = test_input($_POST['email']);
    $idea = test_input($_POST["ideaname"]);
    $description = test_input($_POST["description"]);
 }
