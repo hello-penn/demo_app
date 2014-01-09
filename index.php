@@ -6,10 +6,6 @@
 
 <h2>PHP Form Validation Example</h2>
 <form method="post" action="insert.php">
-   User Name: <input type="text" name="username">
-   <br><br>
-   E-mail: <input type="text" name="email">
-   <br><br>
    Idea Name: <input type="text" name="ideaname">
    <br><br>
    Description: <textarea name="description" rows="5" cols="40"></textarea>
