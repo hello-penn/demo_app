@@ -1,33 +1,21 @@
-<?php include 'db.php';
-include 'header.php';
-?>
-<div data-role="page" id="idea_list">
-<!-- displays a list of current ideas -->
-
-		<h1 aria-level="1" role="heading" class="ui-title">MindStorm</h1>		
+<?php include 'header.php'; ?>
+<div data-role="page" id="new">
+<h1 aria-level="1" role="heading" class="ui-title">MindStorm</h1>		
 		<div role="navigation" class="ui-navbar ui-mini" data-role="navbar">
 			<ul class="ui-grid-a">
 				<li class="ui-block-a"><a class="ui-btn ui-btn-up-a ui-btn-inline" data-inline="true" data-theme="a" data-wrapperels="span" data-iconshadow="true" data-shadow="false" data-corners="false" href="#idea_list"><span class="ui-btn-inner"><span class="ui-btn-text">Idea List</span></span></a></li>
 				<li class="ui-block-b"><a class="ui-btn ui-btn-inline ui-btn-up-a" data-inline="true" data-theme="a" data-wrapperels="span" data-iconshadow="true" data-shadow="false" data-corners="false" href="#new"><span class="ui-btn-inner"><span class="ui-btn-text">New Idea</span></span></a></li>
 			</ul>
-		</div><!-- /navbar -->
+		</div>
 <div data-role="content">
-<?php
-if (mysqli_connect_errno())
-  {
-  echo "Failed to connect to MySQL: " . mysqli_connect_error();
-  }
-$sql = "select name from ideas";
-$result = mysqli_query($mysql_link,$sql);
-echo "<ul data-role='listview'>";
-while($row = mysqli_fetch_array($result))
-  {
-  echo "<li>";
-  echo $row[0];
-  echo "</li>";
-  }
-echo "</ul>";
-?>
-</div>
+<h2>PHP Form Validation Example</h2>
+<form method="post" action="insert.php">
+   Idea Name: <input type="text" name="ideaname">
+   <br><br>
+   Description: <textarea name="description" rows="5" cols="40"></textarea>
+   <br><br>
+   <input type="submit" name="submit" value="Submit">
+</form>
+</div>div>
 </body>
 </html>
