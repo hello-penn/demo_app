@@ -2,7 +2,7 @@
 <!-- ==== LOGIN ====-->
 <!-- Check if there is a user in the current session -->
 <!-- If yes, username = this user, otherwise create a new session with Google API-->
-
+<?php session_start(); ?>
 <html>
 <head>
   <title>Demo: Getting an email address using the Google+ Sign-in button</title>
@@ -65,12 +65,11 @@
    * Display the user's basic profile information from the profile object.
    */
   function displayProfile(profile){
-    document.getElementById('name').innerHTML = profile['displayName'];
+    document.getElementById('name').value = profile['displayName'];
     document.getElementById('pic').innerHTML = '<img src="' + profile['image']['url'] + '" />';
-    document.getElementById('email').innerHTML = email;
-    toggleElement('profile');
+    document.getElementById('email').value = email;
+    document.getElementById("form").submit();
   }
-
   /**
    * Utility function to show or hide elements by their IDs.
    */
@@ -98,14 +97,15 @@
     <!-- In most cases, you don't want to use approvalprompt=force. Specified
     here to facilitate the demo.-->
   </div>
-
+  <form id="form" method="post" action="user.php">
   <div id="profile" class="hide">
     <div>
       <span id="pic"></span>
-      <span id="name"></span>
+      <input type="hidden" name="username" id="name" value >
     </div>
 
-    <div id="email"></div>
+    <input type="hidden" name="email" id="email" value >
   </div>
+  </form>
 </body>
 </html>
