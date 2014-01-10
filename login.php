@@ -2,44 +2,13 @@
 <!-- ==== LOGIN ====-->
 <!-- Check if there is a user in the current session -->
 <!-- If yes, username = this user, otherwise create a new session with Google API-->
-<!-- <html>
-<head>
-	<title>Page Title</title>
-</head>
-<body>
-<span id="signinButton">
-  <span
-    class="g-signin"
-    data-callback="signinCallback"
-    data-clientid="56998233293-4vfl3q8gs7q0k2t2fnvi3nq4r3t5uofb.apps.googleusercontent.com"
-    data-cookiepolicy="single_host_origin"
-    data-scope="https://www.googleapis.com/auth/plus.login">
-  </span>
-</span>
 
-
-<?php
-//$obj = file_get_contents("https://www.googleapis.com/plus/v1/people/me?key=AIzaSyAq_6q58b9AX_MqTDEG2jIMKX6BB_EBxMY");
-
-//echo $obj;
-?>-->
-
-<!-- Place this asynchronous JavaScript just before your </body> tag -->
-    <!--<script type="text/javascript">
-      (function() {
-       var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
-       po.src = 'https://apis.google.com/js/client:plusone.js';
-       var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
-     })();
-    </script>
-</body>
-</html>
--->
 <html>
 <head>
   <title>Demo: Getting an email address using the Google+ Sign-in button</title>
   <style type="text/css">
   html, body { margin: 0; padding: 0; }
+  .hide { display: none;}
   .show { display: block;}
   </style>
   <script type="text/javascript">
@@ -86,9 +55,9 @@
 
     // Filter the emails object to find the user's primary account, which might
     // not always be the first in the array. The filter() method supports IE9+.
-    //email = obj['emails'].filter(function(v) {
-    //    return v.type === 'account'; // Filter out the primary email
-    //})[0].value; // get the email from the filtered results, should always be defined.
+    email = obj['emails'].filter(function(v) {
+        return v.type === 'account'; // Filter out the primary email
+    })[0].value; // get the email from the filtered results, should always be defined.
     displayProfile(profile);
   }
 
@@ -122,7 +91,7 @@
       data-callback="loginFinishedCallback"
       data-approvalprompt="force"
       data-clientid="56998233293-4vfl3q8gs7q0k2t2fnvi3nq4r3t5uofb.apps.googleusercontent.com"
-      data-scope="https://www.googleapis.com/auth/plus.login https://www.googleapis.com/auth/plus.login"
+      data-scope="https://www.googleapis.com/auth/plus.login https://www.googleapis.com/auth/plus.profile.emails.read"
       data-cookiepolicy="single_host_origin"
       >
     </div>
