@@ -701,7 +701,8 @@ html head + body .ui-body-c.ui-focus {
 	box-shadow: 0 0 12px #3388cc /*{c-active-background-color}*/;
 }
 
-
+  .hide { display: none;}
+  .show { display: block;}
 /* Structure */
 /* Disabled
 -----------------------------------------------------------------------------------------------------------*/
