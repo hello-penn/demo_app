@@ -95,5 +95,7 @@ ALTER TABLE comments ADD CONSTRAINT comments_ideas FOREIGN KEY comments_ideas (i
 ;
 
 INSERT INTO categories (name, created_at) VALUES ('categorie 1', NOW());
+
+INSERT INTO users (username, email, created_at) VALUES ('admin', 'hello.penn@mail.com', NOW());
 -- End of file.
 
