@@ -28,7 +28,7 @@ CREATE TABLE ideas (
 -- Table categories
 CREATE TABLE categories (
     id int  NOT NULL AUTO_INCREMENT,
-    name int  NOT NULL,
+    name varchar(255)  NOT NULL,
     created_at timestamp,
     PRIMARY KEY (id)
 );
@@ -93,5 +93,7 @@ ALTER TABLE comments ADD CONSTRAINT comments_ideas FOREIGN KEY comments_ideas (i
  
  
 ;
+
+INSERT INTO categories (name, created_at) VALUES ('categorie 1', NOW());
 -- End of file.
 
